@@ -51,7 +51,7 @@ function Header() {
               Study
             </StyledNavLink>
           </NavLinks>
-          <GitHubLink href="https://github.com/y4sssh /Resume-Generator">
+          <GitHubLink href="https://github.com/y4sssh/Resume-Generator" target="_blank">
             <img src={githubLogo} alt="GitHub logo" />
           </GitHubLink>
         </StyledNavbar.Collapse>
