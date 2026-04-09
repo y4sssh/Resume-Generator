@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, HStack, Image, Stack } from "@chakra-ui/react";
-import { useResume } from "../../Context.js";
+import { useResume } from "../../Context.jsx";
 
 const Template = () => {
   const { setTemplate } = useResume();
@@ -54,4 +54,3 @@ const Template = () => {
 };
 
 export default Template;
-

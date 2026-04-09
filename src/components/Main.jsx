@@ -30,7 +30,7 @@ const Heading = styled.h1`
   font-size: 50px;
   margin-top: 10px;
   font-family: Garamond, serif;
-  
+
   @media (max-width: 768px) {
     font-size: 30px;
   }
@@ -84,7 +84,7 @@ const Button1 = styled.button`
   cursor: pointer;
   margin-top: 60px;
   margin-bottom: 40px;
-  
+
   &:hover {
     /* background-color: #30856a; */
     background-color: #00000087;
@@ -264,7 +264,7 @@ const Main4IconDescription = styled.p`
   max-width: 250px;
   text-align: center;
 `;
- 
+
 
 
 
@@ -322,7 +322,7 @@ const Main = () => {
         <Button1 onClick={handleClick}>Create Resume Now</Button1>
         <ImageSection1>
           <Img
-            src="https://resume-example.com/wp-content/uploads/2021/03/resumes-templates.png"
+            src="/resumes-templates.png"
             alt="Resume2"
           />
         </ImageSection1>
@@ -371,7 +371,7 @@ const Main = () => {
         <Text>Do you write React code?</Text>
         <Equal>=</Equal>
         <Icon src={github} alt="Code Icon" />
-        <Button5> <a href="https://github.com/y4sssh /Resume-Generator">Contribute</a></Button5>
+        <Button5> <a href="https://github.com/y4sssh/Resume-Generator">Contribute</a></Button5>
     </MainSection5>
     </>
   );

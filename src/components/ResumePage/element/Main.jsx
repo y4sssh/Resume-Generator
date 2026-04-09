@@ -8,8 +8,8 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import Builder from "./Builder";
-import Template1 from "./Template1.js";
-import Template2 from "./Template2.js";
+import Template1 from "./Template1.jsx";
+import Template2 from "./Template2.jsx";
 import ThemeSelect from "./Theme/ThemeSelect";
 import { useReactToPrint } from "react-to-print";
 import { useResume } from "../Context";
@@ -103,7 +103,7 @@ const Main = () => {
         my={8}
         alignItems={"flex-start"}
         justifyContent={"space-between"}
-        className="builderContainer" 
+        className="builderContainer"
       >
         <Builder />
         {selectedTemplate} {/* Render the selected template */}
