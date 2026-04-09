@@ -121,7 +121,7 @@ const Contact = () => {
                   placeholder="Enter your message"
                 />
               </Form.Group>
-              <StyledButton type="submit" block className="form_button">
+              <StyledButton type="submit" block="true" className="form_button">
                 Send Message
               </StyledButton>
             </StyledForm>

@@ -64,34 +64,34 @@ const ResumePreview = () => {
             display={{ md: "flex" }}
             flexWrap={{ md: "wrap" }}
           >
-            <HStack spacing={1} className="infoHolders">
-              <MdMail />{" "}
-              <Text>
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+              <MdMail size='2em'/>{" "}
+              <Text m={0}>
                 {about.email ? about.email : "HarryPotter@hogwarts.edu"}
               </Text>
             </HStack>
-            <HStack spacing={1} className="infoHolders">
-              <MdLocalPhone />{" "}
-              <Text>{about.phone ? about.phone : "+910000000000"}</Text>
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+              <MdLocalPhone size='2em'/>{" "}
+              <Text m={0}>{about.phone ? about.phone : "+910000000000"}</Text>
             </HStack>
-            <HStack spacing={1} className="infoHolders">
-              <MdLocationPin />{" "}
-              <Text>{about.address ? about.address : "Pune, MH"}</Text>
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+              <MdLocationPin size='2em'/>{" "}
+              <Text m={0}>{about.address ? about.address : "Pune, MH"}</Text>
             </HStack>
-            <HStack spacing={1} className="infoHolders">
-              <RiWindowFill iconSize='2em'/>{" "}
-              <Text as="a" href={about.website}>Portfolio
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+              <RiWindowFill size='2em'/>{" "}
+              <Text  m={0} as="a" href={about.website}>Portfolio
               </Text>
             </HStack>
-            <HStack spacing={1} className="infoHolders">
-            <RiLinkedinBoxFill />{" "}
-                  <Text as="a" href={about.linkedin}>
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+            <RiLinkedinBoxFill size='2em'/>{" "}
+                  <Text m={0} as="a" href={about.linkedin}>
                     LinkedIn
                   </Text>
             </HStack>
-            <HStack spacing={1} className="infoHolders">
-              <RiGithubFill iconSize='2em'/>{" "}
-              <Text as="a" href={about.github}> GitHub
+            <HStack spacing={1} className="infoHolders" alignItems="center">
+              <RiGithubFill size='2em'/>{" "}
+              <Text m={0} as="a" href={about.github}> GitHub
               </Text>
             </HStack>
           </HStack>
@@ -138,11 +138,12 @@ const ResumePreview = () => {
                   EDUCATION
                 </Heading>
 
-                {educationList.map((education) => {
+                {educationList.map((education, index) => {
                   const { degree, school, startYr, endYr, grade } = education;
 
                   return (
                     <VStack
+                      key={index}
                       spacing={0}
                       alignItems={"flex-start"}
                       w={"full"}
@@ -180,7 +181,7 @@ const ResumePreview = () => {
                   WORK EXPERIENCE
                 </Heading>
 
-                {workList.map((work) => {
+                {workList.map((work, index) => {
                   const {
                     position,
                     type,
@@ -192,6 +193,7 @@ const ResumePreview = () => {
 
                   return (
                     <VStack
+                      key={index}
                       spacing={0.5}
                       alignItems={"flex-start"}
                       lineHeight={1.3}
@@ -247,10 +249,11 @@ const ResumePreview = () => {
                   PROJECTS
                 </Heading>
 
-                {projects.map((project) => {
+                {projects.map((project, index) => {
                   const { name, url, description: desc } = project;
                   return (
                     <VStack
+                      key={index}
                       spacing={0.5}
                       alignItems={"flex-start"}
                       lineHeight={1.3}

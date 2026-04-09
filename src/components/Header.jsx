@@ -38,7 +38,7 @@ function Header() {
         )}
         <StyledNavbar.Collapse id="navbarScroll">
           <NavLinks>
-            <StyledNavLink exact as={NavLink} to="/">
+            <StyledNavLink exact="true" as={NavLink} to="/">
               Home
             </StyledNavLink>
             <StyledNavLink as={NavLink} to="/about">
@@ -51,7 +51,7 @@ function Header() {
               Study
             </StyledNavLink>
           </NavLinks>
-          <GitHubLink href="https://github.com/y4sssh /Resume-Generator">
+          <GitHubLink href="https://github.com/y4sssh/Resume-Generator">
             <img src={githubLogo} alt="GitHub logo" />
           </GitHubLink>
         </StyledNavbar.Collapse>

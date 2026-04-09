@@ -56,18 +56,18 @@ const About = () => {
         image: "https://avatars.githubusercontent.com/u/72117025?v=4",
       },
       {
-        login: "y4sssh ",
-        html_url: "https://github.com/y4sssh ",
+        login: "y4sssh",
+        html_url: "https://github.com/y4sssh",
         image: "https://avatars.githubusercontent.com/u/104668751?v=4",
       },
-      
+
     ],
     []
   );
 
   useEffect(() => {
     fetch(
-      "https://api.github.com/repos/y4sssh /Resume-Generator/contributors"
+      "https://api.github.com/repos/y4sssh/Resume-Generator/contributors"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -98,7 +98,7 @@ const About = () => {
           </p>
           <Row className="d-flex align-items-center justify-content-center">
             {coreDevelopers.map((developer) => (
-              <Col md={4} key={developer.username}>
+              <Col md={4} key={developer.login}>
                 <StyledCard>
                   <Card.Img
                     variant="top"

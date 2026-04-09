@@ -7,8 +7,8 @@ const teamMembers = [
     { name: "Khizar Shah", github: "https://github.com/Khizarshah01" },
     { name: "Om Ingle", github: "https://github.com/omingle-og" },
     { name: "Shashwat Agrawal", github: "https://github.com/ShashwatAgrawal20" },
-    { name: "Yash Vyavahare", github: "https://github.com/y4sssh " },
-    
+    { name: "Yash Vyavahare", github: "https://github.com/y4sssh" },
+
 ];
 
 const Footer = () => {
@@ -106,7 +106,7 @@ const Footer = () => {
                         <a
                             className="btn btn-primary btn-floating m-1 border-0 rounded-circle"
                             style={{ backgroundColor: "#333333", padding: "0.5rem 0.85rem" }}
-                            href="https://github.com/y4sssh /Resume-Generator"
+                            href="https://github.com/y4sssh/Resume-Generator"
                             role="button"
                         ><i className="fa fa-github"></i></a>
 
@@ -117,12 +117,12 @@ const Footer = () => {
 
                 {/* <!-- Copyright --> */}
                 <div
-                    class="text-center p-3"
+                    className="text-center p-3"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
                 >
                     Copyright © {new Date().getFullYear()} Resume Generator
                 </div>
-                
+
             </Row>
         </Container>
     )

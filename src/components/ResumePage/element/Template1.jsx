@@ -45,36 +45,36 @@ const Template1 = () => {
               <Text color={theme} fontWeight={"bold"}>
                 {about.role ? about.role : "Full Stack Web Developer"}
               </Text>
-              <HStack justifyContent={"space-between"}  display={{md: 'flex'}} flexWrap={{md: 'wrap'}}>
+              <HStack spacing={4} flexWrap="wrap" justifyContent="space-between" >
                 <HStack spacing={1}>
-                  <MdMail />{" "}
-                  <Text>
+                  <MdMail size='2em'/>{" "}
+                  <Text m={0} wordBreak="break-all">
                     {about.email ? about.email : "HarryPotter@hogwarts.edu"}
                   </Text>
                 </HStack>
-                <HStack className="infoHolders" spacing={1} marginInlineStart={"-80"}>
-                  <MdLocalPhone />{" "}
-                  <Text>{about.phone ? about.phone : "+910000000000"}</Text>
+                <HStack className="infoHolders" spacing={1} flexWrap="wrap" alignItems="center">
+                  <MdLocalPhone size='2em'/>{" "}
+                  <Text m={0}>{about.phone ? about.phone : "+910000000000"}</Text>
                 </HStack>
                 <HStack className="infoHolders" spacing={1}>
-                  <MdLocationPin />{" "}
-                  <Text>{about.address ? about.address : "Pune, MH"}</Text>
+                  <MdLocationPin size='2em'/>{" "}
+                  <Text m={0}>{about.address ? about.address : "Pune, MH"}</Text>
                 </HStack>
                 <HStack className="infoHolders" spacing={1}>
-                  <RiWindowFill />{" "}
-                  <Text as="a" href={about.website}>
+                  <RiWindowFill size='2em'/>{" "}
+                  <Text m={0} as="a" href={about.website}>
                     Portfolio
                   </Text>
                 </HStack>
                 <HStack className="infoHolders" spacing={1}>
-                  <RiGithubFill />{" "}
-                  <Text as="a" href={about.github}>
+                  <RiGithubFill size='2em'/>{" "}
+                  <Text m={0} as="a" href={about.github}>
                     Github
                   </Text>
                 </HStack>
                 <HStack className="infoHolders" spacing={1}>
-                  <RiLinkedinBoxFill />{" "}
-                  <Text as="a" href={about.linkedin}>
+                  <RiLinkedinBoxFill size='2em'/>{" "}
+                  <Text m={0} as="a" href={about.linkedin}>
                     LinkedIn
                   </Text>
                 </HStack>
@@ -121,11 +121,12 @@ const Template1 = () => {
                     Education
                   </Heading>
                 </Box>
-                {educationList.map((education) => {
+                {educationList.map((education, index) => {
                   const { degree, school, startYr, endYr, grade } = education;
 
                   return (
                     <VStack
+                      key={index}
                       spacing={0}
                       alignItems={"flex-start"}
                       w={"full"}
@@ -164,7 +165,7 @@ const Template1 = () => {
                   </Heading>
                 </Box>
 
-                {workList.map((work) => {
+                {workList.map((work, index) => {
                   const {
                     position,
                     type,
@@ -176,6 +177,7 @@ const Template1 = () => {
 
                   return (
                     <VStack
+                      key={index}
                       spacing={0.5}
                       alignItems={"flex-start"}
                       lineHeight={1.3}
@@ -246,10 +248,11 @@ const Template1 = () => {
                     Projects
                   </Heading>
                 </Box>
-                {projects.map((project) => {
+                {projects.map((project, index) => {
                   const { name, url, description: desc } = project;
                   return (
                     <VStack
+                      key={index}
                       spacing={0.5}
                       alignItems={"flex-start"}
                       lineHeight={1.3}
