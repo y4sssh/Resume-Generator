@@ -10,6 +10,7 @@ import {
 import Builder from "./Builder";
 import Template1 from "./Template1.jsx";
 import Template2 from "./Template2.jsx";
+import Template3 from "./Template3.jsx";
 import ThemeSelect from "./Theme/ThemeSelect";
 import { useReactToPrint } from "react-to-print";
 import { useResume } from "../Context";
@@ -56,7 +57,11 @@ const Main = () => {
 
   // Conditionally render the selected template
   const selectedTemplate =
-    template === "template2" ? <Template2 /> : <Template1 />;
+    template === "template2"
+      ? <Template2 />
+      : template === "template3"
+      ? <Template3 />
+      : <Template1 />;
 
   return (
     <Container bg={"gray.50"} minW={"full"} py={10} id="builder">

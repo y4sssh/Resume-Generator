@@ -118,7 +118,7 @@ const About = () => {
             />
           </FormControl>
         </HStack>
-        
+
         <HStack spacing={6}>
           <FormControl>
             <FormLabel htmlFor="github">Github</FormLabel>
