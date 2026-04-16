@@ -1,35 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useDropzone } from "react-dropzone";
 import "./ImageUpload.styles.css";
-import Files from "react-files";
 import { useResume } from "../../Context";
-import Alert from 'react-bootstrap/Alert';
+import Alert from "react-bootstrap/Alert";
+
 function ImageUpload() {
   const { about, setAbout } = useResume();
   const [error, setError] = useState(false);
 
-  const onFilesChange = (files) => {
-    console.log(files[0]?.preview.url);
-    setAbout({ ...about, picture: files[0]?.preview.url });
-  };
+  const onDrop = useCallback((acceptedFiles, fileRejections) => {
+    if (fileRejections.length > 0) {
+      setError(true);
+      return;
+    }
 
-  const onFilesError = (error, file) => {
-    console.log("error code " + error.code + ": " + error.message);
-    setError(true);
-  };
+    const file = acceptedFiles[0];
+    if (file) {
+      const previewUrl = URL.createObjectURL(file);
+
+      setAbout({
+        ...about,
+        picture: previewUrl,
+      });
+    }
+  }, [about, setAbout]);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: {
+      "image/png": [],
+      "image/jpeg": [],
+      "image/jpg": [],
+    },
+    maxSize: 10000000,
+    multiple: false,
+  });
+
   return (
     <>
-    {error && <Alert variant='danger'>Only jpeg/png/jpg file types are allowed</Alert>}
-    <Files
-      className="files-dropzone"
-      onChange={onFilesChange}
-      onError={onFilesError}
-      accepts={["image/png", "image/jpeg", "image/jpg"]}
-      maxFileSize={10000000}
-      minFileSize={0}
-      clickable
-    >
-      Upload Image
-    </Files>
+      <div {...getRootProps()} className="files-dropzone">
+        <input {...getInputProps()} />
+        {isDragActive ? (
+          <p>Drop the image here...</p>
+        ) : (
+          <p>Upload Image</p>
+        )}
+      </div>
+
+      {error && (
+        <Alert variant="danger">
+          Invalid file. Please upload a JPG or PNG under 10MB.
+        </Alert>
+      )}
     </>
   );
 }

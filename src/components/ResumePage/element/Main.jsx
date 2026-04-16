@@ -10,6 +10,7 @@ import {
 import Builder from "./Builder";
 import Template1 from "./Template1.jsx";
 import Template2 from "./Template2.jsx";
+import Template3 from "./Template3.jsx";
 import ThemeSelect from "./Theme/ThemeSelect";
 import { useReactToPrint } from "react-to-print";
 import { useResume } from "../Context";
@@ -31,14 +32,7 @@ import {
 import styled from "styled-components";
 import Modal from "react-bootstrap/Modal";
 
-const Main = () => {
-  const { printElem, template } = useResume(); // Add template state variable
-
-  const handlePrint = useReactToPrint({
-    content: () => printElem.current,
-  });
-
-  const RowElement = styled.div`
+const RowElement = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +43,14 @@ const Main = () => {
     }
   `;
 
+const Main = () => {
+  const { printElem, template } = useResume(); // Add template state variable
+
+  const handlePrint = useReactToPrint({
+    contentRef: printElem,
+  });
+
+
   const [share, setShare] = useState(false);
   const handleShare = () => {
     setShare((prevShow) => !prevShow);
@@ -56,7 +58,11 @@ const Main = () => {
 
   // Conditionally render the selected template
   const selectedTemplate =
-    template === "template2" ? <Template2 /> : <Template1 />;
+    template === "template2"
+      ? <Template2 />
+      : template === "template3"
+      ? <Template3 />
+      : <Template1 />;
 
   return (
     <Container bg={"gray.50"} minW={"full"} py={10} id="builder">

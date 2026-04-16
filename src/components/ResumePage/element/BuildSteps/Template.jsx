@@ -48,6 +48,23 @@ const Template = () => {
             objectFit="cover"
           />
         </Box>
+        <Box
+          w={"50%"}
+          h={"100%"}
+          border={selectedTemplate === "template3" ? "2px solid blue" : ""}
+          borderRadius="md"
+          overflow="hidden"
+          _hover={{ cursor: "pointer" }}
+          onClick={() => handleSelectTemplate("template3")}
+        >
+          <Image
+            src="/template3.png"
+            alt="Template 3"
+            w="100%"
+            h="100%"
+            objectFit="cover"
+          />
+        </Box>
       </HStack>
     </Stack>
   );

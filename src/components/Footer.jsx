@@ -11,12 +11,13 @@ const teamMembers = [
 
 ];
 
-const Footer = () => {
-    const GoldHoverLink = styled.a`
+const GoldHoverLink = styled.a`
      &:hover {
        color: #ffc107;
      }
    `;
+
+const Footer = () => {
     return (
         <Container fluid
             className="bg-dark text-light mt-auto w-auto"
