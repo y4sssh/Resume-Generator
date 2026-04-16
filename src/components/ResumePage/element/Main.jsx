@@ -32,14 +32,7 @@ import {
 import styled from "styled-components";
 import Modal from "react-bootstrap/Modal";
 
-const Main = () => {
-  const { printElem, template } = useResume(); // Add template state variable
-
-  const handlePrint = useReactToPrint({
-    content: () => printElem.current,
-  });
-
-  const RowElement = styled.div`
+const RowElement = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +42,14 @@ const Main = () => {
       margin: 0 4px;
     }
   `;
+
+const Main = () => {
+  const { printElem, template } = useResume(); // Add template state variable
+
+  const handlePrint = useReactToPrint({
+    contentRef: printElem,
+  });
+
 
   const [share, setShare] = useState(false);
   const handleShare = () => {
